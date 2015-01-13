@@ -8,8 +8,13 @@
 'use strict';
 
 var path = require('path');
+var extend = require('extend-shallow');
 
 module.exports = function loader(file, opts) {
+  if (Array.isArray(file)) {
+    opts = extend({}, opts, file[1]);
+    file = file[0];
+  }
   var key = renameKey(file.path, opts);
   var template = {};
   template[key] = normalize(file, opts);
