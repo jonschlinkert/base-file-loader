@@ -1,8 +1,8 @@
 /*!
  * base-file-loader <https://github.com/jonschlinkert/base-file-loader>
  *
- * Copyright (c) 2014-2015 Jon Schlinkert.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 'use strict';
@@ -13,8 +13,17 @@ var should = require('should');
 var loader = require('./');
 
 describe('loader', function () {
-  it('should equal', function () {
+  it('should load vinyl files', function () {
     var a = new File({path: 'README.md', contents: null});
+    loader(a).should.have.property.README;
+    loader(a).README.should.have.property.contents;
+    loader(a).README.should.have.property.relative;
+    loader(a).README.should.have.property.base;
+    loader(a).README.should.have.property.cwd;
+  });
+
+  it('should load objects', function () {
+    var a = {path: 'README.md', contents: null};
     loader(a).should.have.property.README;
     loader(a).README.should.have.property.contents;
     loader(a).README.should.have.property.relative;
