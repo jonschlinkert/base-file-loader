@@ -1,6 +1,6 @@
 {
   "name": "base-file-loader",
-  "description": "Base loader for loading vinyl files onto a [template] collection.",
+  "description": "Load vinyl file objects onto a Template collection.",
   "version": "1.0.1",
   "homepage": "https://github.com/jonschlinkert/base-file-loader",
   "author": {

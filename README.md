@@ -1,6 +1,6 @@
 # base-file-loader [![NPM version](https://badge.fury.io/js/base-file-loader.svg)](http://badge.fury.io/js/base-file-loader)  [![Build Status](https://travis-ci.org/jonschlinkert/base-file-loader.svg)](https://travis-ci.org/jonschlinkert/base-file-loader) 
 
-> Base loader for loading vinyl files onto a [template] collection.
+> Load vinyl file objects onto a Template collection.
 
 ## Install with [npm](npmjs.org)
 
@@ -11,10 +11,15 @@ npm i base-file-loader --save
 ## Usage
 
 ```js
-var template = require('template');
 var loader = require('base-file-loader');
+var template = require('template');
+var File = require('vinyl');
 
 template.create('post', { isRenderable: true }, [loader]);
+
+// now you can load posts!
+var file = new File({path: 'foo.md', contents: '...'});
+template.post(file);
 ```
 
 ## Run tests

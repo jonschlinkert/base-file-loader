@@ -16,9 +16,9 @@ module.exports = function loader(file, opts) {
     file = file[0];
   }
   var key = renameKey(file.path, opts);
-  var template = {};
-  template[key] = normalize(file, opts);
-  return template;
+  var file = {};
+  file[key] = normalize(file, opts);
+  return file;
 };
 
 function normalize(file, opts) {
