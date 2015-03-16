@@ -1,7 +1,7 @@
 {
   "name": "base-file-loader",
   "description": "Load vinyl file objects onto a Template collection.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/jonschlinkert/base-file-loader",
   "author": {
     "name": "Jon Schlinkert",
@@ -29,7 +29,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "extend-shallow": "^1.0.1"
+    "extend-shallow": "^1.1.2"
   },
   "devDependencies": {
     "mocha": "*",
