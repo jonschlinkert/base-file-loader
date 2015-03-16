@@ -15,10 +15,10 @@ module.exports = function loader(file, opts) {
     opts = extend({}, opts, file[1]);
     file = file[0];
   }
+  var res = {};
   var key = renameKey(file.path, opts);
-  var file = {};
-  file[key] = normalize(file, opts);
-  return file;
+  res[key] = normalize(file, opts);
+  return res;
 };
 
 function normalize(file, opts) {
