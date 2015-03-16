@@ -7,6 +7,7 @@
 
 'use strict';
 
+/* deps:mocha */
 var inspect = require('util').inspect;
 var File = require('vinyl');
 var should = require('should');
